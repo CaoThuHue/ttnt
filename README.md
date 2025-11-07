@@ -128,7 +128,6 @@ print(f"Recall (True): {recall_score(y_test, y_pred_logreg):.4f}")
 
 print(f"F1-Score (True): {f1_score(y_test, y_pred_logreg):.4f}")
 
-print(f"ROC AUC Score: {roc_auc_score(y_test, y_prob_logreg):.4f}")
 
 # 2. Vẽ Ma trận Nhầm lẫn (Confusion Matrix)
 
@@ -150,27 +149,7 @@ plt.ylabel('Thực tế')
 
 plt.show()
 
-# 3. Vẽ đường cong ROC
 
-fpr, tpr, _ = roc_curve(y_test, y_prob_logreg)
-
-plt.figure(figsize=(7, 5))
-
-plt.plot(fpr, tpr, label=f'Logistic Regression (AUC = {roc_auc_score(y_test, y_prob_logreg):.4f})')
-
-plt.plot([0, 1], [0, 1], 'r--', label='Đường Cơ sở')
-
-plt.xlabel('False Positive Rate (FPR)')
-
-plt.ylabel('True Positive Rate (TPR)')
-
-plt.title('Đường cong ROC')
-
-plt.legend()
-
-plt.grid(linestyle='--')
-
-plt.show()
 
 # Định nghĩa lại Pipeline với Random Forest
 
