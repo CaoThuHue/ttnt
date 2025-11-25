@@ -2,27 +2,16 @@
 using System.Xml;
 
         XmlDocument doc = new XmlDocument();
-        
         string tentep = @"D:\CaoThuHue\Bai3\nhanvien.xml";
-        
         int d;
-        
         private void HienThi()
-        
         {
-        
             datanhanvien.Rows.Clear();
-            
             doc.Load(tentep);
-            
             XmlNodeList DS = doc.SelectNodes("/ds/nhanvien");
-            
             int sd = 0;
-            
             datanhanvien.ColumnCount = 4;
-            
             datanhanvien.Rows.Add();
-
             foreach (XmlNode nhan_vien in DS)
             {
                 XmlNode ma_nv = nhan_vien.SelectSingleNode("@manv");
